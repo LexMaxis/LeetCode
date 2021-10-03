@@ -7,64 +7,78 @@
 '''
 
 class Solution(object):
-    def miniumMoves(self,s):
+    # 【myself】
+    # def miniumMoves(self,s):
+    #     n = len(s)
+    #     i = 0
+    #     j = 1
+    #     k = 2
+    #     count = 0
+    #
+    #     while k <= n:
+    #         if s[i] =='X':
+    #             if s[j] == 'X':
+    #                 if s[k] == 'X':
+    #                     i = k + 1
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #                 else:
+    #                     i = k
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #             else:
+    #                 if s[k] == 'X':
+    #                     i = k + 1
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #                 else:
+    #                     i = k
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #         else:
+    #             if s[j] == 'X':
+    #                 if s[k] == 'X':
+    #                     i = k + 1
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #                 else:
+    #                     i = k
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #             else:
+    #                 if s[k] == 'X':
+    #                     i = k + 1
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+    #                 else:
+    #                     i = k
+    #                     j = i + 1
+    #                     k = i + 2
+    #                     count += 1
+
+    #
+
+    def miniumMoves(self, s):
+        ans = 0
         n = len(s)
-        i = 0
-        j = 1
-        k = 2
-        count = 0
-
-        while k <= n:
-            if s[i] =='X':
-                if s[j] == 'X':
-                    if s[k] == 'X':
-                        i = k + 1
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                    else:
-                        i = k
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                else:
-                    if s[k] == 'X':
-                        i = k + 1
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                    else:
-                        i = k
-                        j = i + 1
-                        k = i + 2
-                        count += 1
+        l = 0
+        while l < n:
+            if s[l] == 'X':
+                l += 3
+                ans += 1
             else:
-                if s[j] == 'X':
-                    if s[k] == 'X':
-                        i = k + 1
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                    else:
-                        i = k
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                else:
-                    if s[k] == 'X':
-                        i = k + 1
-                        j = i + 1
-                        k = i + 2
-                        count += 1
-                    else:
-                        i = k
-                        j = i + 1
-                        k = i + 2
-                        count += 1
+                 l += 1
 
-        return count
+        return ans
 
 if __name__ == '__main__':
     s = Solution()
-    str = "XXOX"
+    str = "XXOOOOX"
     s.miniumMoves(str)
