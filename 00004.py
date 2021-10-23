@@ -9,7 +9,7 @@ class Solution(object):
         else:
             ans = nums1[int(n / 2)]
 
-        return float(ans)
+        return ans
 
 
 if __name__ == '__main__':
